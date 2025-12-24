@@ -29,6 +29,7 @@ const firebaseConfin = {
 //   appId: "1:399163332550:web:35e4bcbd805d01f37f04c7",
 //   measurementId: "G-6K1GCZB4SC",
 // };
+console.log("firebase apiKey =", import.meta.env.VITE_FIREBASE_API_KEY);
 
 // Firebase 초기화
 const app = initializeApp(firebaseConfin);
