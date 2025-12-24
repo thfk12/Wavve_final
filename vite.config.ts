@@ -18,7 +18,6 @@ export default defineConfig({
         theme_color: "#000000",
         icons: [
           {
-            // src: "/Wavve_192x192.svg",
             // sizes: "192x192",
             // type: "image/svg+xml",
             src: "/Wavve_192x192.png",
