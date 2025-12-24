@@ -12,24 +12,23 @@ import {
 } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-// const firebaseConfin = {
-// apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-// authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-// projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-// storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-// messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-// appId: import.meta.env.VITE_FIREBASE_APP_ID,
-
-// };
-const firebaseConfig = {
-  apiKey: "AIzaSyAn-8CapGeBDaUmjdDVIgAdZhAYN0R7CE8",
-  authDomain: "wavve-1e9df.firebaseapp.com",
-  projectId: "wavve-1e9df",
-  storageBucket: "wavve-1e9df.firebasestorage.app",
-  messagingSenderId: "399163332550",
-  appId: "1:399163332550:web:35e4bcbd805d01f37f04c7",
-  measurementId: "G-6K1GCZB4SC",
+const firebaseConfin = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAn-8CapGeBDaUmjdDVIgAdZhAYN0R7CE8",
+//   authDomain: "wavve-1e9df.firebaseapp.com",
+//   projectId: "wavve-1e9df",
+//   storageBucket: "wavve-1e9df.firebasestorage.app",
+//   messagingSenderId: "399163332550",
+//   appId: "1:399163332550:web:35e4bcbd805d01f37f04c7",
+//   measurementId: "G-6K1GCZB4SC",
+// };
 
 // Firebase 초기화
 const app = initializeApp(firebaseConfin);
