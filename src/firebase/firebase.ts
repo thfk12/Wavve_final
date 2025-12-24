@@ -12,13 +12,23 @@ import {
 } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-const firebaseConfin = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+// const firebaseConfin = {
+// apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+// authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+// projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+// storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+// messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+// appId: import.meta.env.VITE_FIREBASE_APP_ID,
+
+// };
+const firebaseConfig = {
+  apiKey: "AIzaSyAn-8CapGeBDaUmjdDVIgAdZhAYN0R7CE8",
+  authDomain: "wavve-1e9df.firebaseapp.com",
+  projectId: "wavve-1e9df",
+  storageBucket: "wavve-1e9df.firebasestorage.app",
+  messagingSenderId: "399163332550",
+  appId: "1:399163332550:web:35e4bcbd805d01f37f04c7",
+  measurementId: "G-6K1GCZB4SC",
 };
 
 // Firebase 초기화
@@ -90,9 +100,14 @@ export const saveWatchHistory = async (
 
     // 러닝타임 결정 (TV 시리즈는 평균 에피소드 길이)
     let runtime = content.runtime || 0;
-    if (type === "tv" && content.episode_run_time && content.episode_run_time.length > 0) {
+    if (
+      type === "tv" &&
+      content.episode_run_time &&
+      content.episode_run_time.length > 0
+    ) {
       runtime = Math.round(
-        content.episode_run_time.reduce((a, b) => a + b, 0) / content.episode_run_time.length
+        content.episode_run_time.reduce((a, b) => a + b, 0) /
+          content.episode_run_time.length
       );
     }
 
@@ -110,7 +125,9 @@ export const saveWatchHistory = async (
 
     await setDoc(historyRef, watchData, { merge: true });
 
-    console.log(`시청 기록 저장 성공: ${watchData.title} (${Math.round(lastPosition)}초)`);
+    console.log(
+      `시청 기록 저장 성공: ${watchData.title} (${Math.round(lastPosition)}초)`
+    );
     return true;
   } catch (error) {
     console.error("시청 기록 저장 에러:", error);
@@ -213,7 +230,9 @@ export const formatTime = (seconds: number): string => {
   const secs = Math.floor(seconds % 60);
 
   if (hours > 0) {
-    return `${hours}:${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+    return `${hours}:${String(minutes).padStart(2, "0")}:${String(
+      secs
+    ).padStart(2, "0")}`;
   }
   return `${minutes}:${String(secs).padStart(2, "0")}`;
 };
