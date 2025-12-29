@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import {
   deleteDoc,
@@ -20,19 +19,7 @@ const firebaseConfin = {
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
-  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAn-8CapGeBDaUmjdDVIgAdZhAYN0R7CE8",
-//   authDomain: "wavve-1e9df.firebaseapp.com",
-//   projectId: "wavve-1e9df",
-//   storageBucket: "wavve-1e9df.firebasestorage.app",
-//   messagingSenderId: "399163332550",
-//   appId: "1:399163332550:web:35e4bcbd805d01f37f04c7",
-//   measurementId: "G-6K1GCZB4SC",
-// };
-// console.log("firebase apiKey =", import.meta.env.VITE_FIREBASE_API_KEY);
-// console.log("DEPLOY FIREBASE KEY =", import.meta.env.VITE_FIREBASE_API_KEY);
 
 // Firebase 초기화
 const app = initializeApp(firebaseConfin);
@@ -42,7 +29,6 @@ export const googleProvider = new GoogleAuthProvider();
 export const auth = getAuth(app); // 권한설정 내보내기
 export const db = getFirestore(app); // 파이어베이스 내보내기
 export const storage = getStorage(app);
-// const analytics = getAnalytics(app);
 
 // ============================================
 // 타입 정의
