@@ -169,7 +169,7 @@ export const useAuthStore = create<AuthState>()(
         onKakaoLogin: async (navigate) => {
           try {
             if (!window.Kakao.isInitialized()) {
-              window.Kakao.init("f42c7217dba2db4b19dd471308a132fa");
+              window.Kakao.init("83e1b879c1462978030286adf30d40fa");
             }
 
             await new Promise<KakaoAuthResponse>((resolve, reject) => {
