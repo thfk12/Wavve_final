@@ -31,6 +31,11 @@ const EtcLogin = ({ handleGoogle, handleKakao }: EtcLoginProps) => {
           기존 POOQ 계정 또는 Wavve 계정과는 연동되지 않으니 이용에 참고하세요.
         </p>
       </div>
+      <div>
+        <p>포트폴리오 확인용 아이디, 비밀번호</p>
+        <p>아이디: wnfkrlrhddnjs@explore.com</p>
+        <p>비밀번호: wnfkrlrhddnjs</p>
+      </div>
     </div>
   );
 };
